@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+// Model 객체로 보낼 Blog 데이터만 따로 모아 저장해 전달하는 DTO
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor

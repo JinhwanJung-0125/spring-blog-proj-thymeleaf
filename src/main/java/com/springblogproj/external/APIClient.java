@@ -11,12 +11,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+// 외부 API를 사용해 정보를 받아오는 컴포넌트
 @Slf4j
 @Component
 public class APIClient {
 
     private static final String API_URL = "https://jsonplaceholder.typicode.com/posts";
 
+    // 외부 API에 정보를 받아 이를 Blog 객체 리스트로 Parsing해 반환한다.
     public static List<Blog> fetchDataFromApi() {
         RestTemplate restTemplate = new RestTemplate();
 
@@ -30,6 +32,7 @@ public class APIClient {
         return parsingData(response.getBody());
     }
 
+    // String 형의 데이터를 Blog 객체 리스트로 Parsing하는 메소드
     private static List<Blog> parsingData(String data) {
         ObjectMapper objectMapper = new ObjectMapper();
         List<Blog> parsedData = new ArrayList<>();

@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+// 댓글 전체 조회 시 포스팅 정보와 전체 댓글 리스트를 저장해 전달하는 DTO
 @Getter
 @Setter
 @NoArgsConstructor

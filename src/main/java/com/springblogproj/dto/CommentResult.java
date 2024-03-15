@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+// Query 결과로 나온 Comment 중 id, body, createdAt 정보만 따로 모아 저장해 전달하는 DTO
 @Getter
 @Setter
 @NoArgsConstructor

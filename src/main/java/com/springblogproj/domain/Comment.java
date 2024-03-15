@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+// Comment 테이블과 매핑되는 Comment Entity
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
