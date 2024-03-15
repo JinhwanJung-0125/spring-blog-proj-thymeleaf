@@ -29,6 +29,12 @@ public class CommentService {
         return commentRepository.save(comment);
     }
 
+    public CommentResult getCommentByCommentId(Long articleId, Long commentId) {
+        Comment result = commentRepository.findCommentByCommentId(articleId, commentId)
+            .orElse(Comment.builder().body("Not Found").build());
+        return CommentResult.convert(result);
+    }
+
     public CommentResponse getCommentsByArticleId(Long articleId) {
         Optional<Blog> blogResult = blogRepository.findById(articleId);
 
