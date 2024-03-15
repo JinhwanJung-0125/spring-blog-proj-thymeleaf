@@ -8,6 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
@@ -32,6 +33,12 @@ public class Comment {
     private String body;
 
     @CreationTimestamp
-    @Column(name = "create_at")
+    @Column(name = "created_at")
     private LocalDateTime createdAt;
+
+    @Builder
+    public Comment(Long articleId, String body) {
+        this.articleId = articleId;
+        this.body = body;
+    }
 }
