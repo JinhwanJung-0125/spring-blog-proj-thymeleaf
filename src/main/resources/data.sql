@@ -12,6 +12,8 @@ create table comment (
     body VARCHAR(255),
     created_at timestamp,
     FOREIGN KEY (article_id) REFERENCES article(id)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE
 );
 
 INSERT INTO article(title, content, created_at, updated_at) VALUES ('블로그 제목 1', '블로그 내용 1', now(), now());
