@@ -35,6 +35,14 @@ public class CommentController {
             .body(commentService.writeComment(comment));
     }
 
+    @GetMapping("/comments/{articleId}/{commentId}")
+    public ResponseEntity<CommentResult> getCommentByArticleId(@PathVariable("articleId") Long articleId,
+        @PathVariable("commentId") Long commentId) {
+        return ResponseEntity.ok()
+            .header("Content-Type", "application/json")
+            .body(commentService.getCommentByCommentId(articleId, commentId));
+    }
+
     @GetMapping("/comments/{articleId}")
     public ResponseEntity<CommentResponse> getAllCommentByArticleId(@PathVariable("articleId") Long articleId) {
         return ResponseEntity.ok()
